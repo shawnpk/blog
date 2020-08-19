@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  resources :posts
+  scope module: 'authors' do
+    resources :posts
+  end
+
   devise_for :authors
-  get 'home/index'
+  
   root 'home#index'
 end
