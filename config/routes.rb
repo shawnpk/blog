@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :elements
   scope module: 'authors' do
     resources :posts
   end
