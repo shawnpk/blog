@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   scope module: 'authors' do
-    resources :elements
-    resources :posts
+    resources :posts do
+      resources :elements
+    end
   end
 
   devise_for :authors
