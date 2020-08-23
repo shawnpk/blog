@@ -52,7 +52,10 @@
             <% elsif element.image? %>
               <div class="image">
                 <% if element.image.attached? %>
-                  <%= image_tag(element.image) %>
+                  <div>
+                    <%= image_tag(element.image) %>
+                  </div>
+                  <%= link_to 'Delete', post_element_path(@post, element), method: :delete, class: 'btn btn-danger mt-2 float-right', data: { confirm: 'Are you sure?' } %>
                 <% else %>
                   <%= form_with model: [@post, element] do |form| %>
                     <%= form.file_field :image %>
