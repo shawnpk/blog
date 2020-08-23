@@ -60,7 +60,6 @@ ActiveRecord::Schema.define(version: 2020_08_23_153150) do
 
   create_table "elements", force: :cascade do |t|
     t.string "element_type"
-    t.text "content"
     t.bigint "post_id", null: false
     t.integer "position"
     t.datetime "created_at", precision: 6, null: false
