@@ -26,7 +26,7 @@ module Authors
       @post = current_author.posts.new(post_params)
 
       if @post.save
-        redirect_to @post, notice: 'Post was successfully created.'
+        redirect_to edit_post_path(@post), notice: 'Post was successfully created.'
       else
         render :new
       end
