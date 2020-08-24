@@ -6,6 +6,13 @@
         <h4 class='card-title'>Editing Post</h4>
         <%= render 'form', post: @post %>
       </div>
+      <div class="card-footer">
+        <% if @post.published? %>
+          <%= link_to 'Unpublish', '#', class: 'btn btn-secondary btn-block' %>
+        <% else %>
+          <%= link_to 'Publish', '#', class: 'btn btn-dark btn-block' %>
+        <% end %>
+      </div>
     </div>
   </div>
 
