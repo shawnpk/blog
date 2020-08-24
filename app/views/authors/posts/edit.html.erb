@@ -2,15 +2,17 @@
   <div class="col-md-3">
     <%= link_to 'Back', posts_path, class: 'btn btn-secondary mb-3' %>
     <div class="card">
+      <div class="card-header">
+        <h6 class='card-title mb-0'>Editing Post</h6>
+      </div>
       <div class="card-body">
-        <h4 class='card-title'>Editing Post</h4>
         <%= render 'form', post: @post %>
       </div>
       <div class="card-footer">
         <% if @post.published? %>
-          <a href="#" class='btn btn-secondary btn-click btn-block' data-reflex='click->Publisher#unpublish' data-post-id='<%= @post.id %>'>Unpublish</a>
+          <%= link_to 'Unpublish', '#', class: 'btn btn-secondary btn-block', data: { reflex: 'click->Publisher#unpublish', post_id: @post.id } %>
         <% else %>
-          <a href="#" class='btn btn-dark btn-click btn-block' data-reflex='click->Publisher#publish' data-post-id='<%= @post.id %>'>Publish</a>
+          <%= link_to 'Publish', '#', class: 'btn btn-dark btn-block', data: { reflex: 'click->Publisher#publish', post_id: @post.id } %>
         <% end %>
       </div>
     </div>
@@ -30,13 +32,7 @@
     </div>
 
     <div class="card">
-      <div class="card-body pt-4">
-        <% if @post.published?%>
-          <span class="badge badge-primary mr-1">
-            Published
-          </span>
-          <%= time_ago_in_words(@post.published_at) %> ago
-        <% end %>
+      <div class="card-body pt-5">
         <% @post.elements.each do |element| %>
           <% if element.persisted? %>
             <% if element.paragraph? %>
