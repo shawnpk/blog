@@ -19,7 +19,10 @@ module Authors
     # PATCH/PUT /elements/1
     def update
       @element.update(element_params)
-      redirect_to edit_post_path(@element.post)
+      # redirect_to edit_post_path(@element.post)
+      respond_to do |format|
+        format.js
+      end
     end
 
     # DELETE /elements/1
