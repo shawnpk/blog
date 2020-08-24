@@ -32,6 +32,13 @@
     </div>
 
     <div class="card">
+      <div class="card-header text-right">
+        <% if @post.published?%>
+          <strong>Published</strong> <%= time_ago_in_words(@post.published_at) %> ago
+        <% else %>
+          Unpublished
+        <% end %>
+      </div>
       <div class="card-body pt-5">
         <% @post.elements.each do |element| %>
           <% if element.persisted? %>
