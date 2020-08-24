@@ -30,9 +30,10 @@
         <%= form.file_field :header_image %>
       </span>
     </label>
+
     <div class="mt-1">
-      <small>Current image:</small>
       <% if post.header_image.attached? %>
+        <small>Current image:</small>
         <%= image_tag post.header_image, width: '100%' %>
       <% end %>
     </div>
