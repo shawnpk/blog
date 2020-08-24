@@ -8,9 +8,9 @@
       </div>
       <div class="card-footer">
         <% if @post.published? %>
-          <%= link_to 'Unpublish', '#', class: 'btn btn-secondary btn-block' %>
+          <a href="#" class='btn btn-secondary btn-click btn-block' data-reflex='click->Publisher#unpublish' data-post-id='<%= @post.id %>'>Unpublish</a>
         <% else %>
-          <%= link_to 'Publish', '#', class: 'btn btn-dark btn-block' %>
+          <a href="#" class='btn btn-dark btn-click btn-block' data-reflex='click->Publisher#publish' data-post-id='<%= @post.id %>'>Publish</a>
         <% end %>
       </div>
     </div>
@@ -31,6 +31,12 @@
 
     <div class="card">
       <div class="card-body pt-4">
+        <% if @post.published?%>
+          <span class="badge badge-primary mr-1">
+            Published
+          </span>
+          <%= time_ago_in_words(@post.published_at) %> ago
+        <% end %>
         <% @post.elements.each do |element| %>
           <% if element.persisted? %>
             <% if element.paragraph? %>
