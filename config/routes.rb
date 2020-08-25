@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   end
 
   devise_for :authors
+
+  get '/blog/:id', to: 'readers/posts#show', as: :blog_post
   
   root 'readers/home#index'
 end
