@@ -4,7 +4,7 @@ module Authors
 
     # GET /posts
     def index
-      @posts = current_author.posts
+      @posts = current_author.posts.order(created_at: :desc)
     end
 
     # GET /posts/1

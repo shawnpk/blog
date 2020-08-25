@@ -19,6 +19,9 @@
             <% else %>
               <span class="badge badge-secondary mb-3">Unpublished</span>
             <% end %>
+            <div class="text-secondary">
+              <small><%= post.created_at.strftime('%B %d, %Y')%></small>
+            </div>
             <h5 class="card-title mb-2 text-dark"><%= post.title %></h5>
             <p class='text-secondary mb-0'><%= truncate(post.description, length: 215) %></p>
           </div>
