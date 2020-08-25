@@ -12,8 +12,7 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true, length: { within: 50..250 }
 
-  scope :published, -> { where(published: true) }
-
+  scope :published,               -> { where(published: true) }
   scope :most_recently_published, -> { order(published_at: :desc) }
 
   def should_generate_new_friendly_id?
