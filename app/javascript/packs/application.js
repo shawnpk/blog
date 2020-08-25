@@ -22,6 +22,8 @@ require("trix");
 require("@rails/actiontext");
 
 import Sortable from "sortablejs";
+import "controllers";
+
 import "../stylesheets/application";
 
 document.addEventListener("turbolinks:load", () => {
@@ -43,8 +45,6 @@ document.addEventListener("turbolinks:load", () => {
     element.previousElementSibling.classList.remove("d-none");
   });
 
-  let element = document.getElementById("elements");
-  Sortable.create(elements, { animation: 150 });
+  let sortable_elements = document.getElementById("elements");
+  Sortable.create(sortable_elements, { animation: 150 });
 });
-
-import "controllers";
