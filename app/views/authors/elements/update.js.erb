@@ -4,5 +4,7 @@ element.classList.add("d-none");
 element.previousElementSibling.classList.remove("d-none");
 
 var html =
-  "<div class='trix-content'><%= @element.content.body.html_safe %></div>";
+"
+<div class='trix-content'><%= @element.content.body %></div>
+";
 element.previousElementSibling.innerHTML = html;

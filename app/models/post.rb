@@ -9,4 +9,8 @@ class Post < ApplicationRecord
 
   validates :title, presence: true
   validates :description, presence: true, length: { within: 50..250 }
+
+  def should_generate_new_friendly_id?
+    title_changed?
+  end
 end
