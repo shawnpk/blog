@@ -39,7 +39,7 @@ document.addEventListener("turbolinks:load", () => {
       datasets: [
         {
           label: "Page Views",
-          data: JSON.parse(ctx.dataset.keys),
+          data: JSON.parse(ctx.dataset.data),
           borderWidth: 1,
         },
       ],
@@ -54,7 +54,7 @@ document.addEventListener("turbolinks:load", () => {
       datasets: [
         {
           label: "Unique Page Views",
-          data: JSON.parse(ctx.dataset.keys),
+          data: JSON.parse(ctx.dataset.data),
           borderWidth: 1,
         },
       ],
