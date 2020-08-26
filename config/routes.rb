@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
+  devise_for :authors
+  
+  root 'readers/home#index'
+  get '/blog/:id', to: 'readers/posts#show', as: :blog_post
+  
   scope module: 'authors' do
+    get 'stats', to: 'stats#index'
     resources :posts do
       resources :elements
     end
   end
-
-  devise_for :authors
-
-  get '/blog/:id', to: 'readers/posts#show', as: :blog_post
-  
-  root 'readers/home#index'
 end
