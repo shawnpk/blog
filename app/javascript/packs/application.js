@@ -21,6 +21,8 @@ require("bootstrap/dist/js/bootstrap");
 const Trix = require("trix");
 require("@rails/actiontext");
 
+const Chart = require("chart.js");
+
 Trix.config.blockAttributes.heading1.tagName = "h3";
 
 import Sortable from "sortablejs";
@@ -29,6 +31,8 @@ import "controllers";
 import "../stylesheets/application";
 
 document.addEventListener("turbolinks:load", () => {
+  console.log("Chart: ", Chart);
+
   document.addEventListener("click", () => {
     let element = event.target.closest(".paragraph-content");
     if (!element) return;
