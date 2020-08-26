@@ -6,6 +6,6 @@ class ElementsReflex < ApplicationReflex
       element_record.update(position: element['position'])
     end
 
-    @halted = true
+    morph :nothing
   end
 end
