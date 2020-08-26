@@ -31,7 +31,35 @@ import "controllers";
 import "../stylesheets/application";
 
 document.addEventListener("turbolinks:load", () => {
-  console.log("Chart: ", Chart);
+  var ctx = document.getElementById("page-views");
+  var myChart = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: JSON.parse(ctx.dataset.labels),
+      datasets: [
+        {
+          label: "Page Views",
+          data: JSON.parse(ctx.dataset.keys),
+          borderWidth: 1,
+        },
+      ],
+    },
+  });
+
+  var ctx = document.getElementById("unique-page-views");
+  var myChart = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: JSON.parse(ctx.dataset.labels),
+      datasets: [
+        {
+          label: "Unique Page Views",
+          data: JSON.parse(ctx.dataset.keys),
+          borderWidth: 1,
+        },
+      ],
+    },
+  });
 
   document.addEventListener("click", () => {
     let element = event.target.closest(".paragraph-content");
