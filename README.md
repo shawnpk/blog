@@ -1,24 +1,19 @@
-# README
+# Stimulus Blog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Blog app using Stimulus, ActionText and ActiveStorage
 
-Things you may want to cover:
+### Endpoints
 
-* Ruby version
+- /posts => Admin area
+- /stats => Simple stats
 
-* System dependencies
+### Gems
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- [binding_of_caller] (https://rubygems.org/gems/binding_of_caller)
+- [better_errors] (https://rubygems.org/gems/better_errors)
+- [devise] (https://rubygems.org/gems/devise)
+- [friendly_id] (https://rubygems.org/gems/friendly_id)
+- [impressionist] (https://rubygems.org/gems/impressionist)
+- [optimism] (https://rubygems.org/gems/optimism)
+- [pry-rails] (https://rubygems.org/gems/pry-rails)
+- [stimulus_reflex] (https://rubygems.org/gems/stimulus_reflex)
