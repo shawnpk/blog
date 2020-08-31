@@ -4,6 +4,7 @@ Blog app using Stimulus, ActionText and ActiveStorage
 
 ### Endpoints
 
+- /
 - /posts => Admin area
 - /stats => Simple stats
 
